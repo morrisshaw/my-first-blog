@@ -7,16 +7,13 @@
     <h1><a href="">Morriss Blog</a></h1>
   </div>
 
-  <div>
-    <p>published: may 21 2016 </p>
-    <h2><a href="">My First Post</a></h2>
-    <p>Homo homini lupus</p>
-  </div>
-
-  <div>
-    <p>published: may 21 2016 </p>
-    <h2><a href="">My Second</a></h2>
-    <p>Mene Mene Tekel Ufarsin</p>
+    {% for post in posts %}
+      <div>
+        <p>published: {{post.published_date }}</p>
+        <h1><a href=""> {{ post.title }} </a></h1>
+        <p> {{ post.text|linebreaks }} </p>
+      </div>
+    {% endfor %}
   </div>
 
 </body>
